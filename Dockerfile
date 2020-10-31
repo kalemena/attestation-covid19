@@ -16,10 +16,16 @@ RUN apt-get update --quiet --quiet \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-COPY [ ".", "/data/" ]
-VOLUME ["/data"]
+### USER covid
+RUN useradd -ms /bin/bash -u 1000 covid
+
+COPY --chown=covid:covid [ ".", "/data/" ]
+#VOLUME ["/data"]
 WORKDIR /data
 
-COPY [ "docker-entrypoint.sh", "/" ]
+COPY --chown=covid:covid [ "docker-entrypoint.sh", "/" ]
 RUN chmod +x /docker-entrypoint.sh
+
+USER covid
+
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
