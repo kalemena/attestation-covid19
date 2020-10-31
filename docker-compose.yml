@@ -1,8 +1,13 @@
-version: '2'
+version: '3.7'
 
 services:
   gen:
-    build: docker/
+    build: .
+    image: attestation-covid19
     volumes:
-      - ./:/data
+      - ./config/config.inc:/data/config/config.inc:ro
+#      - ./build:/data/build
+      - ./results:/results
+    environment:
+      - RESULT_PATH=/results/
 

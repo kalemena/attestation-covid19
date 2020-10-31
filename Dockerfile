@@ -1,14 +1,9 @@
 FROM debian:9-slim
 
-VOLUME ["/data"]
-
-COPY entrypoint.sh /
-
 ENV TZ=Europe/Paris
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
-    && echo $TZ > /etc/timezone \
-    && chmod +x /entrypoint.sh
+    && echo $TZ > /etc/timezone
 
 RUN apt-get update --quiet --quiet \
     && apt-get install --yes --no-install-recommends \
@@ -21,6 +16,10 @@ RUN apt-get update --quiet --quiet \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+COPY [ ".", "/data/" ]
+VOLUME ["/data"]
 WORKDIR /data
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+COPY [ "docker-entrypoint.sh", "/" ]
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
