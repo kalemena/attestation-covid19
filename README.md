@@ -1,3 +1,12 @@
+
+__WARNING__: 
+
+Ce repo est un __fork__ du super projet d'attestation-covid19.
+
+Seul le packaging Docker est modifié pour en faire un service web afin de l'intégrer facilement dans un autre projet (chatbot). 
+
+
+
 # Générateur d'attestation de déplacement dérogatoire COVID19
 
 ![Comparaison entre le document du ministère et celui généré](exemples/comparaison.png)
