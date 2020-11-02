@@ -1,4 +1,4 @@
-FROM debian:9-slim
+FROM python:3.7
 
 ENV TZ=Europe/Paris
 
@@ -26,6 +26,13 @@ WORKDIR /data
 COPY --chown=covid:covid [ "docker-entrypoint.sh", "/" ]
 RUN chmod +x /docker-entrypoint.sh
 
+RUN pip install --no-cache-dir \
+    flask \
+    flask_restful \
+    flask_jsonpify
+
 USER covid
 
-ENTRYPOINT [ "/docker-entrypoint.sh" ]
+# CMD [ "/docker-entrypoint.sh" ]
+CMD [ "flask", "run", "--host", "0.0.0.0" ]
+# CMD [ "/bin/bash" ]

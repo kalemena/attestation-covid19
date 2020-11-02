@@ -1,13 +1,15 @@
 version: '3.7'
 
 services:
-  gen:
+  
+  attestation:
     build: .
     image: attestation-covid19
     volumes:
-      - ./config/config.inc:/data/config/config.inc:ro
+      - ./config/config.inc.example:/data/config/config.inc:ro
 #      - ./build:/data/build
-      - ./results:/results
-    environment:
-      - RESULT_PATH=/results/
-
+#      - ./results:/results
+    ports:
+      - 5000:5000
+#    environment:
+#      - RESULT_PATH=/results/
