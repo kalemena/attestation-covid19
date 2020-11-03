@@ -19,17 +19,18 @@ RUN apt-get update --quiet --quiet \
 ### USER covid
 RUN useradd -ms /bin/bash -u 1000 covid
 
+### Web Service tools
+RUN pip install --no-cache-dir \
+    flask \
+    flask_restful \
+    flask_jsonpify
+
 COPY --chown=covid:covid [ ".", "/data/" ]
 #VOLUME ["/data"]
 WORKDIR /data
 
 COPY --chown=covid:covid [ "docker-entrypoint.sh", "/" ]
 RUN chmod +x /docker-entrypoint.sh
-
-RUN pip install --no-cache-dir \
-    flask \
-    flask_restful \
-    flask_jsonpify
 
 USER covid
 
