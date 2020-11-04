@@ -4,7 +4,7 @@ services:
   
   attestation:
     build: .
-    image: attestation-covid19
+    image: kalemena/attestation-covid19
     volumes:
       - ./config/config.inc.example:/data/config/config.inc:ro
 #      - ./build:/data/build

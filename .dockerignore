@@ -1,4 +1,12 @@
+.git
+.gitignore
+.dockerignore
+docker-compose.yml
+Dockerfile
 build
+cgi-bin
 config/config.inc
 config/config_*.inc
 attestation.pdf
+results/**
+exemples
