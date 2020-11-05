@@ -5,6 +5,27 @@ Ce repo est un __fork__ du super projet d'attestation-covid19.
 
 Seul le packaging Docker est modifié pour en faire un service web afin de l'intégrer facilement dans un autre projet (chatbot). 
 
+Service web retournant le PDF:
+
+    POST http://localhost:5000/attestation
+    Content-Type: application/json
+    {
+        "prenom": "Prénom",
+        "nom": "Nom",
+        "naissance_date": "01/01/1970",
+        "naissance_lieu": "Lyon",
+        "adresse": "999 avenue de france 75001 Paris",
+        "motif_travail": "x",
+        "motif_courses": "",
+        "motif_sante": "",
+        "motif_famille": "",
+        "motif_handicap": "",
+        "motif_sport": "",
+        "motif_judiciaire": "",
+        "motif_missions": "",
+        "motif_enfants": "",
+        "fait_lieu": "Paris"
+    }
 
 
 # Générateur d'attestation de déplacement dérogatoire COVID19
