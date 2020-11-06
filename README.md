@@ -5,6 +5,10 @@ Ce repo est un __fork__ du super projet d'attestation-covid19.
 
 Seul le packaging Docker est modifié pour en faire un service web afin de l'intégrer facilement dans un autre projet (chatbot). 
 
+Démarrer le service Docker:
+
+    $ docker-compose up -d
+
 Service web retournant le PDF:
 
     POST http://localhost:5000/attestation
