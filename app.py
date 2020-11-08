@@ -18,15 +18,16 @@ def attestation():
     export naissance_date="%s"
     export naissance_lieu="%s"
     export adresse="%s"
-    export motif_travail="%s"
-    export motif_courses="%s"
-    export motif_sante="%s"
-    export motif_famille="%s"
-    export motif_handicap="%s"
-    export motif_sport="%s"
-    export motif_judiciaire="%s"
-    export motif_missions="%s"
-    export motif_enfants="%s"
+    # export motif_travail=""
+    # export motif_courses=""
+    # export motif_sante=""
+    # export motif_famille=""
+    # export motif_handicap=""
+    # export motif_sport=""
+    # export motif_judiciaire=""
+    # export motif_missions=""
+    # export motif_enfants=""
+    export motif_%s="x"
     export fait_lieu="%s"
     export fait_date="`date +"%%d/%%m/%%Y"`"
     export fait_heures="`date +"%%H"`"
@@ -40,15 +41,7 @@ def attestation():
         content['naissance_date'],
         content['naissance_lieu'],
         content['adresse'],
-        content['motif_travail'],
-        content['motif_courses'],
-        content['motif_sante'],
-        content['motif_famille'],
-        content['motif_handicap'],
-        content['motif_sport'],
-        content['motif_judiciaire'],
-        content['motif_missions'],
-        content['motif_enfants'],
+        content['motif'],
         content['fait_lieu']
     )
 
