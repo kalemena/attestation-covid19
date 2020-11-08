@@ -19,17 +19,21 @@ Service web retournant le PDF:
         "naissance_date": "01/01/1970",
         "naissance_lieu": "Lyon",
         "adresse": "999 avenue de france 75001 Paris",
-        "motif_travail": "x",
-        "motif_courses": "",
-        "motif_sante": "",
-        "motif_famille": "",
-        "motif_handicap": "",
-        "motif_sport": "",
-        "motif_judiciaire": "",
-        "motif_missions": "",
-        "motif_enfants": "",
+        "motif": "travail"
         "fait_lieu": "Paris"
     }
+
+Motif est une valeur dans le liste:
+
+    travail
+    courses
+    sante
+    famille
+    handicap
+    sport
+    judiciaire
+    missions
+    enfants        
 
 
 # Générateur d'attestation de déplacement dérogatoire COVID19
